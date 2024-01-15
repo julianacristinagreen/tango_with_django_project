@@ -32,7 +32,6 @@ def about(request):
             </head>
             <body>
                 <h1>Rango says here is the about page.</h1>
-                <p>Your other content goes here.</p>
                 <a href='/rango/'>Index</a>.
             </body>
         </html>
