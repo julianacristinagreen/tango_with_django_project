@@ -14,9 +14,19 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 #References templates directory.
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+#Media files wil be uploaded to projetc's root + '/media/
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+#Media file hosting
+#Tells Django where to find media files in filesystem
+MEDIA_ROOT = MEDIA_DIR
+#What URL to serve them
+MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -65,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -121,4 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#References static files directory.
+STATICFILES_DIRS = [STATIC_DIR, ]
 
